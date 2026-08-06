@@ -11,5 +11,6 @@ COPY models ./models
 
 # Render/other hosts set $PORT; default to 8000 locally
 ENV PORT=8000
+ENV MODEL_PATH=/app/models/model.pkl
 WORKDIR /app/api
 CMD uvicorn main:app --host 0.0.0.0 --port ${PORT}
